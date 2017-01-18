@@ -25,8 +25,8 @@ export class AuthenticationService {
     login(username: string, password: string) : Observable<any>{
 
         var obj = { "userName":username, "password":password};
-        var myJSON = JSON.stringify(obj);
-        return this.http.post('http://localhost:8080/movieService/',myJSON)
+        //var myJSON = JSON.stringify(obj);
+        return this.http.post('http://localhost:8080/movieService/',obj)
             .map(response => <LoginResponce> response.json());
     }
 
