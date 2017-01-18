@@ -26,8 +26,9 @@ export class AuthenticationService {
 
         var obj = { "userName":username, "password":password};
         //var myJSON = JSON.stringify(obj);
-        return this.http.post('http://localhost:8080/movieService/',obj)
-            .map(response => <LoginResponce> response.json());
+        localStorage.setItem('currentUser', JSON.stringify(obj));
+        return this.http.post('http://localhost:8080/loginService/login',obj)
+            .map(response => /*<LoginResponce> */response.json());
     }
 
     logout() {

@@ -38,8 +38,20 @@ export class LoginComponent implements OnInit {
 
                     //console.log(data)
 
-                    if(data.userName=='admin' && data.password=='admin'){
-                        this.router.navigate(['register']);
+                    if(data.userName=='admin'){
+                        this.router.navigate(['admin']);
+                    }else{
+                        if(data.userName!=null && data.status == 'ACTIVE'){
+                            this.router.navigate(['home']);
+                        }
+                        if(data.userName!=null && data.status == 'DEACTIVE'){
+                            this.router.navigate(['register']);
+                        }
+                        if(data.userName!=null && data.status == 'NOTEXIST') {
+                            this.router.navigate(['login']);
+                            this.alertService.error("USER IS NOT EXIST");
+
+                        }
                     }
 
                 },

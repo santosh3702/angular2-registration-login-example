@@ -17,6 +17,8 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import {HomeComponent} from "./home/home.component";
+import {AdminComponent} from "./admin/admin.component";
 
 @NgModule({
     imports: [
@@ -28,7 +30,8 @@ import { RegisterComponent } from './register/index';
     declarations: [
         AppComponent,
         AlertComponent,
-
+        HomeComponent,
+        AdminComponent,
         LoginComponent,
         RegisterComponent
     ],
