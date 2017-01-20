@@ -22,13 +22,19 @@ export class AuthenticationService {
             });
     }*/
 
-    login(username: string, password: string) : Observable<any>{
+    login(username: string, password: string) : Observable<LoginResponce>{
+
+        document.cookie = username;
 
         var obj = { "userName":username, "password":password};
         //var myJSON = JSON.stringify(obj);
         localStorage.setItem('currentUser', JSON.stringify(obj));
-        return this.http.post('http://localhost:8080/loginService/login',obj)
-            .map(response => /*<LoginResponce> */response.json());
+        var obj2 =this.http.post('http://localhost:8080/loginService/login',obj)
+            .map((response:LoginResponce) =>
+                 response.json()
+
+              );
+        return obj2;
     }
 
     logout() {

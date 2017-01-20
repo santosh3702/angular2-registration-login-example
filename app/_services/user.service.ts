@@ -26,7 +26,7 @@ export class UserService {
 
     delete(username: string) {
         var obj = { "userName":username};
-        return this.http.post('http://localhost:8080/loginService/delete',obj).map((response: Response) => response.json());
+        return this.http.delete('http://localhost:8080/loginService/delete',obj).map((response: Response) => response.json());
     }
 
     // private helper methods

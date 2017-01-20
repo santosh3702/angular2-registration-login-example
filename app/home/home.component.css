@@ -1,0 +1,35 @@
+._3AxU {
+    width: 100%;
+    height: 74px;
+    padding: 7px 0px 0px 0px;
+    background: #fff;
+    border-bottom: 1px solid #deeaee;
+    min-width: 968px;
+    float: left;
+    position: relative;
+    margin-left: -22%;
+}
+.dropdown{
+    margin-top: 2%;
+}
+#imaginary_container{
+    margin-top:-5%; /* Don't copy this */
+    margin-left: 33%;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.userprofile{
+    margin: 0 0 0 0;
+    padding: 0 0 0 20%;
+}

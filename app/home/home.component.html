@@ -1,1 +1,38 @@
-<h1>Welcome to Home</h1>
+<div class="_3AxU" data-reactid="9">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Movie Category
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Comedy</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Crime</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thriller</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Biography</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div id="imaginary_container">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search" >
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-text">
+            <span ng-if="!mpCartValues.cart_items.length" class="">No Items in Your Bag</span>
+            <i style="font-size:24px" class="fa">&#xf07a;</i>
+        </div>
+
+        <div id="userprofile">
+            <span>{{localvar3}}</span>
+        </div>
+    </div>
+</div>
