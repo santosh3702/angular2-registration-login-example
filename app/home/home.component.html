@@ -27,12 +27,15 @@
         </div>
 
         <div class="cart-text">
-            <span ng-if="!mpCartValues.cart_items.length" class="">No Items in Your Bag</span>
+            <span><!--*ngFor="let item of cart"-->{{cart.length}}</span>
             <i style="font-size:24px" class="fa">&#xf07a;</i>
         </div>
 
         <div id="userprofile">
             <span>{{localvar3}}</span>
         </div>
+    </div>
+    <div id ="myMovieList">
+        <div *ngFor="let movie of movieList" class="movieItem {{movie.split(' ').join(' ')}}" (click)="selectedMovie(movie)"><span class="movieName">{{movie}}</span></div>
     </div>
 </div>

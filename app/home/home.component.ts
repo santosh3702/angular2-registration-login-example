@@ -20,6 +20,15 @@ export class HomeComponent {
     console.log(var1);
 
     }
+    public recentMovie: String= "None";
+    public cart :String[] = [];
+    public  movieList: String[] = ['kaidhi150','batmanvsuperman','Civilwar'];
+
+    selectedMovie(movie:String){
+        this.recentMovie= movie;
+        this.cart.push(movie);
+        alert(movie +' movie was added to cart')
+    }
    /* public recentMovie: String= "None";
     public cart :String[] = [];
     public  movieList: String[] = ['kaidhi150','batmanvsuperman','Civilwar'];
