@@ -22,7 +22,7 @@ export class AuthenticationService {
             });
     }*/
 
-    login(username: string, password: string) : Observable<LoginResponce>{
+    login(username: string, password: string) : Observable<any>{
 
         document.cookie = username;
 
@@ -30,10 +30,9 @@ export class AuthenticationService {
         //var myJSON = JSON.stringify(obj);
         localStorage.setItem('currentUser', JSON.stringify(obj));
         var obj2 =this.http.post('http://localhost:8080/loginService/login',obj)
-            .map((response:LoginResponce) =>
+            .map(response =>
                  response.json()
-
-              );
+            );
         return obj2;
     }
 

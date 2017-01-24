@@ -1,10 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import {userName} from '../variables/_variables';
 import { AlertService, AuthenticationService } from '../_services/index';
-import {LoginResponce} from "../_models/LoginResponce";
-import createExportDeclaration = ts.createExportDeclaration;
-import {var1, var2} from '../variables/_variables';
+//import {LoginResponce} from "../_models/LoginResponce";
+
 
 
 @Component({
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrl: string;
-    loginResponce: LoginResponce =new LoginResponce();
+  
 
     constructor(
         private route: ActivatedRoute,
@@ -47,12 +46,18 @@ export class LoginComponent implements OnInit {
                         this.router.navigate(['admin']);
                     }else{
                         if(data.userName!=null && data.status == 'ACTIVE'){
+                           // status=data.status;
+                            let userName = data.userName;
 
-                            this.loginResponce.status=data.status;
+                            console.log(userName);
+                            this.router.navigate(['home']);
+
+                           /* this.loginResponce.status=data.status;
                             this.loginResponce.userName=data.userName;
                             console.log(this.loginResponce.userName);
                             this.router.navigate(['home']);
-                            var1=this.loginResponce.userName;
+                            let var1=this.loginResponce.userName;*/
+
                         }
                         if(data.userName!=null && data.status == 'DEACTIVE'){
                             this.alertService.error("Contact to admin to activate");
@@ -71,6 +76,8 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
 
+        }
 
-    }
+
+
 }

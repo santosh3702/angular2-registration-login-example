@@ -1,9 +1,7 @@
 import {Component, OnInit} from "@angular/core";
-import {User} from "../_models/user";
-import {UserService} from "../_services/user.service";
-import  {userName} from "../login/login.component";
-import {LoginResponce} from "../_models/LoginResponce";
-import {var1, var2} from '../variables/_variables';
+import {LoginComponent} from  "../login/login.component"
+import {userName} from "../variables/_variables";
+
 /**
  * Created by grahul on 1/18/2017.
  */
@@ -14,15 +12,14 @@ import {var1, var2} from '../variables/_variables';
     styleUrls: ['home.component.css']
 })
 export class HomeComponent {
-    localvar3 :string;
-     constructor() {
-         this.localvar3=var1;
-    console.log(var1);
-
-    }
+    selectedUser :string;
     public recentMovie: String= "None";
     public cart :String[] = [];
     public  movieList: String[] = ['kaidhi150','batmanvsuperman','Civilwar'];
+    loginComponent:LoginComponent;
+    constructor(){
+        this.selectedUser=userName;
+    }
 
     selectedMovie(movie:String){
         this.recentMovie= movie;
